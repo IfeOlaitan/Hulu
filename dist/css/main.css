@@ -64,6 +64,8 @@ img {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+  z-index: 5;
+  position: relative;
 }
 .header::after {
   content: "";
@@ -122,6 +124,11 @@ img {
 .btn-outline:hover {
   color: #fff;
   border-color: #ccc;
+}
+
+.btn-dark {
+  background: #000;
+  color: #fff;
 }
 
 .legal-text {
@@ -264,9 +271,127 @@ img {
   width: 40px;
 }
 
+.footer {
+  background: #ebedf2;
+  color: #333;
+}
+.footer a {
+  color: #333;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.footer-lists {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-lists .list-head {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.divider {
+  color: #ccc;
+  width: 100%;
+  height: 3px;
+  border-top: 1px solid #ccc;
+  margin: 30px 0;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  margin-right: 25px;
+}
+
 @media (max-width: 1100px) {
   .categories .covers {
     grid-template-columns: 1fr 1fr;
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal__box {
+  margin: 3% auto;
+  width: 400px;
+  background: #fff;
+  color: #333;
+  position: relative;
+  -webkit-animation: modalopen 1s;
+          animation: modalopen 1s;
+}
+.modal__body {
+  padding: 50px;
+}
+.modal__body h3 {
+  font-weight: bold;
+}
+.modal__body .btn {
+  width: 100%;
+  margin-top: 30px;
+}
+.modal__footer {
+  background: #f7f7f9;
+  color: #333;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+.modal__footer a {
+  color: steelblue;
+}
+.modal .close {
+  height: 23px;
+  width: 23px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+.form-control label {
+  display: block;
+  text-transform: uppercase;
+}
+.form-control input {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  height: 50px;
+  padding: 5px;
+}
+
+@-webkit-keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @media (max-width: 768px) {
@@ -324,5 +449,14 @@ img {
     top: 30px;
     left: 30px;
     margin-top: 60px;
+  }
+
+  .footer-lists {
+    flex-direction: column;
+  }
+  .footer-lists .list-head {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 5px;
   }
 }/*# sourceMappingURL=main.css.map */
